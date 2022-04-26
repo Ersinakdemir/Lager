@@ -69,9 +69,10 @@ public class Bearbeitung<keyList> {
         int regalNo =produkt.regalNo;
         List valuesList =new ArrayList<>(Arrays.asList(produktName, hersteller,mange,einheit,regalNo));
         produktMapList.put(produktID,valuesList);
-
+        System.out.printf("%-6d %-8s %-8s %-6f %-6s %-6d\n",produktID, valuesList.get(0),valuesList.get(1),valuesList.get(2),
+                valuesList.get(3),valuesList.get(4) );
         //produktList.add(produkt);
-        System.out.println(produktMapList.toString());
+        //System.out.println(produktMapList.toString());
         return valuesList;
     }
 
@@ -145,7 +146,12 @@ public class Bearbeitung<keyList> {
         System.out.println("geben sie bitte Produkt Id ein");
         int eingabeId = scan.nextInt();
         if (produktMapList.containsKey(eingabeId)){
-            System.out.println(produktMapList.get(eingabeId));
+            produktMapList.get(eingabeId).get(0);
+            //System.out.println(produktMapList.get(eingabeId));
+            System.out.println("Id     Name     Hersteller     Mange     Einheit   RegalNo  ");
+            System.out.println("-------------------------------------------------- ");
+            System.out.printf("%-6d %-8s %-8s %-10f %-6s %-6d\n",eingabeId, produktMapList.get(eingabeId).get(0),produktMapList.get(eingabeId).get(1),produktMapList.get(eingabeId).get(2),
+                    produktMapList.get(eingabeId).get(3),produktMapList.get(eingabeId).get(4) );
         }else System.out.println("das Produkt wurde nicht hergestellt");
 
     }public void verlassen(){
