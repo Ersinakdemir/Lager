@@ -100,7 +100,7 @@ public class Bearbeitung<keyList> {
         int eingabeId = scan.nextInt();
         if (produktMapList.containsKey(eingabeId)){
             System.out.println("geben Sie bitte die Mange ein");
-            double mangeAdd = scan.nextInt();
+            double mangeAdd = scan.nextDouble();
             double neuMange = mangeAdd+(Double) produktMapList.get(eingabeId).get(2);
             produktMapList.get(eingabeId).set(2,neuMange);
         }else System.out.println("das Produkt wurde nicht verfüngbar");
